@@ -1,0 +1,76 @@
+.playing-area{
+    display: flex;
+    flex-direction: row;
+    vertical-align: top;
+    
+}
+
+.rock,.paper,.scissors{
+    margin: 10px;
+    cursor: pointer;
+    border-style: none;
+    padding: 0;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative; /* Add this line */
+}
+
+.rock::after, .paper::after, .scissors::after {
+    content: attr(alt); /* Add this line */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.rock:hover::after, .paper:hover::after, .scissors:hover::after {
+    opacity: 1;
+}
+
+.rock-div, .paper-div, .scissors-div{
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    
+}
+.rock button img{
+    object-fit: fill;
+}
+
+.desc{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+
+    background-color: black;
+    opacity: 1;
+    color: white;
+    width: 70px;
+    margin-top: 0;
+    padding: 3px;
+
+}
+
+.rock:hover{
+   opacity: 1;
+   transition: opacitiy 0.5s ease-in-out;
+    
+}
+
+.rock img:hover{
+    opacity: 0.5;
+    transition: opacitiy 0.5s ease-in-out;
+}
